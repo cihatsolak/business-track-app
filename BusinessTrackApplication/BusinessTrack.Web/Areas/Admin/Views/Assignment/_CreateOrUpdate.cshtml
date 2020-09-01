@@ -1,0 +1,17 @@
+﻿@model AssignmentViewModel
+
+<div class="form-group">
+    <label asp-for="Name"></label>
+    <input type="text" class="form-control" asp-for="Name">
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Description"></label>
+    <textarea type="text" class="form-control" asp-for="Description" rows="3"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="ExigencyId"></label>
+    <select asp-for="ExigencyId" class="form-control" asp-items="@Model.Exigencies"></select>
+    <span asp-validation-for="ExigencyId" class="text-danger"></span>
+</div>

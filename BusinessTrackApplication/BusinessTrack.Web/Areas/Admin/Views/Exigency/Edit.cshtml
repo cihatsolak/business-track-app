@@ -1,0 +1,18 @@
+﻿@model ExigencyViewModel
+@{
+    ViewData["Title"] = "Aciliyet Düzenle";
+}
+<h5 class="text-secondary text-center mt-4 mb-2">
+    <mark class="text-uppercase">@Model.Definition</mark>
+    Tanımını Düzenle
+</h5>
+<form asp-action="Edit" method="post" class="w-75 mx-auto p-3 shadow">
+    @Html.HiddenFor(i => i.Id)
+    @await Html.PartialAsync("_CreateOrUpdate", Model)
+    <button type="submit" class="btn btn-success">Değişiklikleri Kaydet</button>
+</form>
+
+@section Javascript{
+    <script src="~/lib/js/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/js/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+}

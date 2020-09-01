@@ -1,0 +1,43 @@
+﻿@model ExigencyListViewModel
+@{
+    ViewData["Title"] = "Aciliyet Listesi";
+}
+
+@if (Model.ExigencyViewModels.Count > 0)
+{
+    <a asp-action="Create" class="btn btn-success btn-sm float-right my-3">
+        <i class="fas fa-plus mr-2"></i>
+        Yeni Aciliyet Ekle
+    </a>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Aciliyet Tanımı</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var exigency in Model.ExigencyViewModels)
+            {
+                <tr>
+                    <td>@exigency.Definition</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@exigency.Id" class="btn btn-warning btn-sm text-center py-1 px-3">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="text-center lead mt-4">
+        <p class="lead">
+            Sistemde kayıtlı aciliyet durumu bulunamadı.
+        </p>
+        <a asp-action="Create" class="btn btn-sm btn-info my-2">Yeni Aciliyet Ekle</a>
+    </div>
+}

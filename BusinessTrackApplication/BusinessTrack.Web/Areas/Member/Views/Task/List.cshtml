@@ -1,0 +1,58 @@
+﻿@model AssignedJobListViewModel
+@{
+    ViewData["Title"] = "Görev Listesi";
+    int total = (int)ViewBag.TotalPageCount;
+    int current = (int)ViewBag.ActivePage;
+}
+
+@foreach (var Job in Model.AssignedJobs)
+{
+    <div class="card mb-2">
+        <h5 class="card-header">@Job.Name</h5>
+        <div class="card-body">
+            <h5 class="card-title">@Job.ExigencyDefinition</h5>
+            <p class="card-text">@Job.Description</p>
+
+            <p>
+                @if (Job.ReportCount > 0)
+                {
+                    <a class="btn btn-warning btn-sm" data-toggle="collapse"
+                       href="#reportCollapse@(Job.Id)" role="button" aria-expanded="false" aria-controls="reportCollapse@(Job.Id)">
+                        Reporlara Git<i class="fas fa-caret-down ml-1 mr-2"></i>
+                        <span class="badge badge-info ml-1">@Job.ReportCount</span>
+                    </a>
+                }
+
+                <div class="collapse" id="reportCollapse@(Job.Id)">
+                    <table class="table table-hover table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <th>Tanım</th>
+                                <th>Detay</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var report in Job.Reports)
+                            {
+                                <tr>
+                                    <td>@report.Definition</td>
+                                    <td>@report.Detail</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        @for (int i = 1; i <= total; i++)
+        {
+            <li class="page-item @(i==current ? "active": "")">
+                <a class="page-link" asp-action="List" asp-route-pageIndex="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

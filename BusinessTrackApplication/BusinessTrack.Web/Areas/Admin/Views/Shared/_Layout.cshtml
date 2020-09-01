@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="iş takip sistemi">
+    <meta name="author" content="cihat solak">
+
+    <title>@ViewData["Title"] - İş Takip Sistemi</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/lib/css/template-css/simple-sidebar.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        @await Component.InvokeAsync("Wrapper") 
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            
+
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/lib/js/jquery/jquery.min.js"></script>
+    <script src="~/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/font-awesome/js/all.min.js"></script>
+
+    @RenderSection("Javascript", false)
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });</script>
+
+</body>
+
+</html>

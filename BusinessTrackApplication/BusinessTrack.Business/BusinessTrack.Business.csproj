@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.2.0" />
+    <PackageReference Include="FastMember" Version="1.5.0" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.6.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessTrack.DataAccess\BusinessTrack.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

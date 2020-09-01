@@ -1,0 +1,114 @@
+﻿@model AssignmentAppUserViewModel
+@{
+    ViewData["Title"] = "Görev Ata";
+}
+
+<div class="row mt-2">
+    <div class="col-md-12 my-2">
+        @if (!string.IsNullOrEmpty(Model.SearchKeyword))
+        {
+            <div class="border border-dark p-3 my-2">
+                <strong>
+                    @Model.SearchKeyword
+                </strong>
+                kelimesi için sonuçları görüntülüyorsunuz.
+                <br />
+                <small class="text-secondary">Toplam sonuç sayısı: @Model.AppUsers.Count</small>
+                <a asp-action="UserAssignList" asp-route-assignmentId="@Model.Id" class="float-right">Filtreyi Kaldır</a>
+            </div>
+        }
+
+        <form asp-action="UserAssignList" method="get" class="float-right form-inline">
+            <input type="hidden" name="assignmentId" value="@Model.Id" />
+            <input type="hidden" name="pageIndex" value="@Model.ActivePage" />
+            <input class="form-control-sm mr-1" type="text" name="s">
+            <button class="btn btn-primary btn-sm" type="submit">Ara</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow">
+            <div class="card-header text-uppercase">
+                <strong>@Model.Name</strong>
+                <small class="float-right">
+                    <span class="badge badge-info">@Model.Definition</span>
+                </small>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    @Model.Description
+                </p>
+                <p class="card-text float-right">
+                    @Model.CreatedOn
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        @if (Model.AppUsers.Count > 0)
+        {
+            @foreach (var user in Model.AppUsers)
+            {
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="@user.Picture" class="card-img p-3" alt="@user.Name @user.Surname">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@user.Name @user.Surname</h5>
+                                <p class="card-text">
+                                    <assignmentsbyuserid user-id="@user.Id"></assignmentsbyuserid>
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        @user.Email
+                                    </small>
+                                    <a asp-action="UserAssign"
+                                       asp-route-userId="@user.Id"
+                                       asp-route-assignmentId="@Model.Id"
+                                       class="btn btn-primary float-right btn-sm">Görevlendir</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item @(Model.ActivePage == 1 ? "disabled":"")">
+                        <a class="page-link"
+                           asp-route-assignmentId="@Model.Id"
+                           asp-route-pageIndex="@(Model.ActivePage-1)"
+                           asp-route-s="@(!string.IsNullOrEmpty(Model.SearchKeyword) ? Model.SearchKeyword : null)">
+                            Önceki
+                        </a>
+                    </li>
+                    @for (int pageNumber = 1; pageNumber <= Model.TotalPage; pageNumber++)
+                    {
+                        <li class="page-item @(Model.ActivePage == pageNumber ? "active" : "") ">
+                            <a class="page-link" asp-action="UserAssignList"
+                               asp-route-assignmentId="@Model.Id"
+                               asp-route-pageIndex="@pageNumber"
+                               asp-route-s="@(!string.IsNullOrEmpty(Model.SearchKeyword) ? Model.SearchKeyword : null)">
+                                @pageNumber
+                            </a>
+                        </li>
+                    }
+                    <li class="page-item @(Model.TotalPage == Model.ActivePage ? "disabled":"")">
+                        <a class="page-link"
+                           asp-route-assignmentId="@Model.Id"
+                           asp-route-pageIndex="@(Model.ActivePage+1)"
+                           asp-route-s="@(!string.IsNullOrEmpty(Model.SearchKeyword) ? Model.SearchKeyword : null)">
+                            Sonraki
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        }
+        else
+        {
+            <p class="lead">Herhangi bir sonuç bulunamadı.</p>
+        }
+    </div>
+</div>

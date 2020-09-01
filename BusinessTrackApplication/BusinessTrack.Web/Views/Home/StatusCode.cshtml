@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = ViewBag.Message;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row my-auto mx-auto">
+    <div class="col-md-4">
+        <img src="~/img/not-found.png" class="w-100 img-fluid"/>
+    </div>
+    <div class="col-md-8 display-4">
+        <p>@ViewBag.Code</p>
+        <p>@ViewBag.Message</p>
+    </div>
+</div>
+

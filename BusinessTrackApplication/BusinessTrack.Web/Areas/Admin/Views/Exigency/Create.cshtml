@@ -1,0 +1,16 @@
+﻿@model ExigencyViewModel
+@{
+    ViewData["Title"] = "Yeni Aciliyet Ekle";
+}
+
+<h1>Yeni Aciliyet Ekle</h1>
+
+<form asp-action="Create" method="post" class="w-75 mx-auto p-3 shadow">
+    @await Html.PartialAsync("_CreateOrUpdate", Model)
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
+
+@section Javascript{
+    <script src="~/lib/js/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/js/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+}

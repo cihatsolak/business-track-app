@@ -1,0 +1,115 @@
+﻿@model AssignedJobListViewModel
+@{
+    ViewData["Title"] = "AssignedWorkOrders";
+}
+
+@foreach (var Job in Model.AssignedJobs)
+{
+    <div class="card mb-2">
+        <h5 class="card-header">@Job.Name</h5>
+        <div class="card-body">
+            <h5 class="card-title">@Job.ExigencyDefinition</h5>
+            <p class="card-text">@Job.Description</p>
+
+            <p>
+                @if (Job.ReportCount > 0)
+                {
+                    <a class="btn btn-warning btn-sm" data-toggle="collapse"
+                       href="#reportCollapse@(Job.Id)" role="button" aria-expanded="false" aria-controls="reportCollapse@(Job.Id)">
+                        Reporlara Git<i class="fas fa-caret-down ml-1 mr-2"></i>
+                        <span class="badge badge-info ml-1">@Job.ReportCount</span>
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="CreateReport" asp-route-workId="@Job.Id" class="btn btn-light">
+                        <i class="fas fa-plus-circle mr-2"></i>
+                        Rapor Yaz
+                    </a>
+                <p class="lead text-danger font-weight-bold font-italic">
+                    Hiç rapor yazmamışsınız, görevinizdeki ilerlemelerinizden bahsedin.
+                </p>
+            }
+                <a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target="#assignmentCompleteModal" data-id="@Job.Id">
+                    Tamamlandı olarak işaretle
+                </a>
+                <div class="collapse" id="reportCollapse@(Job.Id)">
+                    <a asp-action="CreateReport" asp-route-workId="@Job.Id" class="btn btn-light">
+                        <i class="fas fa-plus-circle mr-2"></i>
+                        Rapor Yaz
+                    </a>
+                    <table class="table table-hover table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <th>Tanım</th>
+                                <th>Detay</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var report in Job.Reports)
+                            {
+                                <tr>
+                                    <td>@report.Definition</td>
+                                    <td>@report.Detail</td>
+                                    <td>
+                                        <a asp-action="EditReport" asp-route-id="@report.Id" class="btn btn-warning btn-sm">
+                                            <i class="far fa-edit mr-2"></i>
+                                            Düzenle
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+<!-- Modal -->
+<div class="modal fade" id="assignmentCompleteModal" tabindex="-1" role="dialog" aria-labelledby="assignmentCompleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="assignmentCompleteModalLabel">Uyarı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Bu işlemi gerçekleştirmek istediğinizden emin misiniz?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                <button id="complete-work" type="button" class="btn btn-primary">İşlemi Tamamla</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Javascript{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#assignmentCompleteModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var btnAssignmentId = button.data('id');
+
+                $("#complete-work").click(function () {
+                    $.ajax({
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        url: "@Url.Action("AssignedCompleted", "Work")",
+                        data: { assignmentId: btnAssignmentId },
+                        success: function (data) {
+                            window.location.reload();
+                        },
+                        error: function (ex) {
+                            alert(ex.responseText);
+                        }
+                    });
+                });
+            })
+        });
+    </script>
+}

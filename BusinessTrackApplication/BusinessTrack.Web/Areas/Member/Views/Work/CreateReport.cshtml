@@ -1,0 +1,13 @@
+﻿@model ReportAddViewModel
+@{
+    ViewData["Title"] = "Rapor Oluştur";
+}
+
+<form asp-action="CreateReport" method="post" class="w-75 mx-auto p-3">
+    @await Html.PartialAsync("_ReportCreateOrUpdate", Model)
+</form>
+
+@section Javascript{
+    <script src="~/lib/js/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/js/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+}

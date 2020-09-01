@@ -1,0 +1,57 @@
+﻿@model AssignUserViewModel
+@{
+    ViewData["Title"] = "Personel Görevlendir";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="UserAssign" method="post">
+            <p class="lead">
+                Aşağıdaki göreve ilgili personel atanacaktır. Bu işlemi gerçekleştirmek istediğinizden emin misiniz?
+            </p>
+            @Html.HiddenFor(i => i.UserId)
+            @Html.HiddenFor(i => i.AssignmentId)
+            <div class="form-group text-center">
+                <a asp-action="UserAssignList" asp-route-id="@Model.AssignmentId" class="btn btn-danger">Vazgeç</a>
+                <button type="submit" class="btn btn-primary">Evet, Görevlendir</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow">
+            <div class="card-header text-uppercase">
+                <strong>@Model.AssignmentName</strong>
+                <small class="float-right">
+                    <span class="badge badge-info">@Model.AssignmentExigencyDefinition</span>
+                </small>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    @Model.AssignmentDescription
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card border border-primary mb-3 p-2">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="@Model.UserPicture" class="card-img p-3" alt="@Model.UserFullName">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.UserFullName</h5>
+                        <p class="card-text">
+                            <assignmentsbyuserid user-id="@Model.UserId"></assignmentsbyuserid>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                @Model.UserEmail
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

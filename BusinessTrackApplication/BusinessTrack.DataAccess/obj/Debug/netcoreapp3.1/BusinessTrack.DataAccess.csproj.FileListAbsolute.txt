@@ -1,0 +1,30 @@
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.deps.json
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.runtimeconfig.json
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.runtimeconfig.dev.json
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.dll
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.pdb
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.dll
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.pdb
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.csprojAssemblyReference.cache
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.AssemblyInfoInputs.cache
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.AssemblyInfo.cs
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.csproj.CopyComplete
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.dll
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.pdb
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.genruntimeconfig.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.deps.json
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.runtimeconfig.json
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.runtimeconfig.dev.json
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.dll
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.DataAccess.pdb
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.dll
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.pdb
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.csprojAssemblyReference.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.AssemblyInfoInputs.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.AssemblyInfo.cs
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.csproj.CopyComplete
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.dll
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.pdb
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.DataAccess\obj\Debug\netcoreapp3.1\BusinessTrack.DataAccess.genruntimeconfig.cache

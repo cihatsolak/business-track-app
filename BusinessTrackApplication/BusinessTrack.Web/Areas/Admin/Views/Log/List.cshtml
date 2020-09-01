@@ -1,0 +1,30 @@
+﻿@model List<LogViewModel>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sayfa Linki</th>
+            <th scope="col">Oluşma Tarihi</th>
+            <th scope="col">Mesaj</th>
+            <th scope="col">Katman</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+        <tr>
+            <th scope="row">@log.Id</th>
+            <td>@log.Path</td>
+            <td>@log.CreatedOn</td>
+            <td>@log.Message</td>
+            <td>@log.Source</td>
+        </tr>
+        }
+    </tbody>
+</table>
+

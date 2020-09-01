@@ -1,0 +1,18 @@
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.deps.json
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.dll
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.pdb
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.AssemblyInfoInputs.cache
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.AssemblyInfo.cs
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.csproj.CoreCompileInputs.cache
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.dll
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.pdb
+C:\Users\CihatSolak\source\repos\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.csprojAssemblyReference.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.deps.json
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.dll
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\bin\Debug\netcoreapp3.1\BusinessTrack.Entities.pdb
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.csprojAssemblyReference.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.AssemblyInfoInputs.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.AssemblyInfo.cs
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.csproj.CoreCompileInputs.cache
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.dll
+C:\Users\CihatSolak\Desktop\DERS\PROJE GELİŞTİREREK ASP.NET CORE MVC APİ ÖĞRENİN A-Z\BusinessTrackApplication\BusinessTrack.Entities\obj\Debug\netcoreapp3.1\BusinessTrack.Entities.pdb

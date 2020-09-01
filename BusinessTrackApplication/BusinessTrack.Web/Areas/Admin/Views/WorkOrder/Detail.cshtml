@@ -1,0 +1,46 @@
+﻿@model AssignmentReportsViewModel
+@{
+    ViewData["Title"] = "Görev Detayı";
+}
+
+@if (Model.ReportsViewModel.Count > 0)
+{
+    <a asp-action="ExportExcel" asp-route-assignmentId="@Model.Id" target="_blank" 
+       class="btn btn-success text-white mt-2 my-2 btn-sm">
+        <i class="fas fa-file-excel mr-2"></i>
+        Excel'e Aktar
+    </a>
+
+    <a asp-action="ExportPdf" asp-route-assignmentId="@Model.Id" target="_blank"
+       class="btn btn-danger text-white mt-2 my-2 btn-sm">
+        <i class="fas fa-file-pdf mr-2"></i>Pdf'e Aktar
+    </a>
+
+    <table class="table table-hover table-sm table-bordered">
+        <thead>
+            <tr>
+                <th colspan="2">@Model.UserFullName personelinizin @Model.Name görevine yazmış olduğu raporlar</th>
+            </tr>
+            <tr>
+                <th>Tanım</th>
+                <th>Detay</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var report in Model.ReportsViewModel)
+            {
+                <tr>
+                    <td>@report.Definition</td>
+                    <td>@report.Detail</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class=" border border-dark mt-2 text-center">
+        @Model.UserFullName personeliniz şuan da @Model.Name görevi üzerinde çalışıyor. Henüz bir rapor yazmamış.
+    </div>
+}

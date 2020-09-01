@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div id="piechart" style="width: 600px; height: 400px;"></div>
+    </div>
+    <div class="col-md-6">
+        <div id="piechart_3d" style="width: 600px; height: 400px;"></div>
+    </div>
+</div>
+
+
+@section Javascript{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        // #region Pie Chart 3d
+        let mostWorkCompletedWithFiveStaffArray = [['PersonelName', 'AssignmentCount']];
+
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("AssignmentCompleted", "Graph")",
+            async: false,
+            success: function (data) {
+                let object = jQuery.parseJSON(data);
+                console.log(object);
+                $.each(object, (index, value) => {
+                    mostWorkCompletedWithFiveStaffArray.push([value.Name, value.AssignmentCount]);
+                });
+            }
+        });
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart3d);
+        function drawChart3d() {
+
+            var data = google.visualization.arrayToDataTable(mostWorkCompletedWithFiveStaffArray);
+
+            var options = {
+                title: 'En Çok İş Tamamlayan 5 Personel',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+
+         // #endregion
+
+        // #region Pie Chart 2d
+        let mostEmployedArray = [['PersonelName', 'AssignmentCount']];
+
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("MostEmployed", "Graph")",
+            async: false,
+            success: function (data) {
+                let object = jQuery.parseJSON(data);
+
+                $.each(object, (index, value) => {
+                    mostEmployedArray.push([value.Name, value.AssignmentCount]);
+                });
+            }
+        });
+
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+
+
+            var data = google.visualization.arrayToDataTable(mostEmployedArray);
+
+            var options = {
+                title: 'En Çok Çalışan 5 Personel'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+        // #endregion
+    </script>
+}
+

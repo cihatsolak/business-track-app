@@ -1,0 +1,121 @@
+﻿@model CardsViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3">
+
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">Rapor Sayısı</h5>
+                <p class="card-text">
+                    @{
+                        if (Model.TotalNumberOfReports > 0)
+                        {
+                            @Model.TotalNumberOfReports
+                        }
+                        else
+                        {
+                            <span>Hiç rapor oluşturulmamıştır.</span>
+                        }
+                    }
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">Tamamlanan Görev Sayısı</h5>
+                <p class="card-text">
+                    @{
+                        if (Model.NumberOfTasksCompleted > 0)
+                        {
+                            @Model.NumberOfTasksCompleted
+                        <p class="text-right">
+                            İncelemek için
+                            <a asp-controller="Task" asp-action="List">
+                                <i class="fas fa-chevron-circle-right mr-1"></i>
+                                Tıklayınız
+                            </a>
+                        </p>
+                    }
+                    else
+                    {
+                        <span>Hiç görev tamamlanmamıştır.</span>
+                    }
+                    }
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Tamamlanmamış Görev Sayısı</h5>
+                    <p class="card-text">
+                        @{
+                            if (Model.NumberOfMissionsCompleted > 0)
+                            {
+                                @Model.NumberOfMissionsCompleted
+                            <p class="text-right">
+                                İncelemek için
+                                <a asp-area="Member" asp-controller="Work" asp-action="AssignedWork">
+                                    <i class="fas fa-chevron-circle-right mr-1"></i>
+                                    Tıklayınız
+                                </a>
+                            </p>
+                        }
+                        else
+                        {
+                            <span>Tüm görevleri tamamladınız.</span>
+                        }
+                        }
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Bildirimler</h5>
+                        <p class="card-text">
+                            @{
+                                if (Model.UnreadNotifications > 0)
+                                {
+                                    @Model.UnreadNotifications
+                                <p class="text-right">
+                                    İncelemek için
+                                    <a asp-area="Member" asp-controller="Notification" asp-action="List">
+                                        <i class="fas fa-chevron-circle-right mr-1"></i>
+                                        Tıklayınız
+                                    </a>
+                                </p>
+                            }
+                            else
+                            {
+                                <span>Okunmamış bildirim bulunmamaktadır.</span>
+                            }
+                            }
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+

@@ -1,0 +1,71 @@
+﻿@model AppUserViewModel
+@{
+    ViewData["Title"] = "Profil";
+}
+
+<form asp-action="Profile" method="post" class="w-75 mx-auto p-3" enctype="multipart/form-data">
+
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+    @Html.HiddenFor(i => i.Id)
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Surname"></label>
+        <input type="text" asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input type="text" asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <h5 class="text-center">Kullanımda olan resminiz</h5>
+                    <img src="@Model.Picture" style="height:10rem!important" alt="@Model.Name" />
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div id="preview-pp-image" style="display:none!important">
+                    <h5 class="text-center">Seçtiğiniz resim:</h5>
+                    <img src="" class="w-100" style="height:10rem!important" id="selected-pp-image" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label asp-for="ProfilePictureFile"></label>
+                <input type="file" class="form-control-file" asp-for="ProfilePictureFile" />
+                <span asp-validation-for="ProfilePictureFile" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-info btn-sm float-right mt-2">
+        <i class="fas fa-check mr-2"></i>
+        Kaydet
+    </button>
+</form>
+
+@section Javascript{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#@Html.IdFor(i=>i.ProfilePictureFile)").change(function (e) {
+                let createURL = URL.createObjectURL(e.target.files[0]);
+                $("#preview-pp-image").show();
+                $("#selected-pp-image").attr("src", createURL);
+            });
+        });
+    </script>
+
+    <script src="~/lib/js/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/js/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+}

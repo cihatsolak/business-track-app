@@ -1,0 +1,75 @@
+﻿@model List<AssignmentListAllViewModel>
+@{
+    ViewData["Title"] = "List";
+}
+
+@if (Model.Count > 0)
+{
+    <table class="table table-hover table-sm mt-2">
+        <thead>
+            <tr>
+                <th>İş Tanımı</th>
+                <th>Açıklama</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>Atanan Personel</th>
+                <th>Durum</th>
+                <th>Rapor Sayısı</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assignment in Model)
+            {
+                <tr>
+                    <td>@assignment.Name</td>
+                    <td>@assignment.Description</td>
+                    <td>@assignment.CreatedOn</td>
+                    <td>
+                        @{
+                            if (string.IsNullOrEmpty(assignment.AppUserFullName))
+                            {
+                                <span class="badge badge-danger">Çalışan personel bulunmamaktadır.</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-success">@assignment.AppUserFullName</span>
+                            }
+                        }
+                    </td>
+                    <td>@assignment.ExigencyDefinition</td>
+                    <td>
+                        @{
+                            if (assignment.ReportCount > 0)
+                            {
+                                <span class="badge badge-pill badge-info">@assignment.ReportCount</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-pill badge-warning">Rapor bulunmamaktadır.</span>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @{
+                            if (string.IsNullOrEmpty(assignment.AppUserFullName))
+                            {
+                                <a asp-action="UserAssignList" asp-route-assignmentId="@assignment.Id" class="btn btn-info btn-sm">Personel Görevlendir</a>
+                            }
+                            else
+                            {
+                                <a asp-action="Detail" asp-route-assignmentId="@assignment.Id" class="btn btn-info btn-sm">Detay Göster</a>
+                            } 
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="my-2 text-center lead">
+        Herhangi bir görev bulunmamaktadır.
+    </div>
+}
+

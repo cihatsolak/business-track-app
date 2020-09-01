@@ -1,0 +1,28 @@
+﻿@model NotificationListViewModel
+@{
+    ViewData["Title"] = "Bildirim Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.NotificationList.Count == 0)
+{
+    <div class="alert alert-danger">
+        Okunmamış bildiriminiz bulunmamaktadır.
+    </div>
+}
+else
+{
+    @foreach (var notification in Model.NotificationList)
+    {
+        <div class="alert alert-light p-3 my-2">
+            <form method="post" asp-action="Read" class="my-1">
+                <p class="lead">
+                    <input type="hidden" name="id" value="@notification.Id" />
+                    @notification.Message
+                    <button type="submit" class="btn btn-light btn-sm float-right">Okundu</button>
+                </p>
+            </form>
+        </div>
+    }
+}
+

@@ -1,0 +1,33 @@
+﻿@model ReportAddViewModel
+
+<div class="text-center lead p-3">
+    <p>
+        <span class="text-danger">Görevin Adı:</span>@Model.AssignmentName
+    </p>
+    <p>
+        <span class="text-danger">Görevin Açıklaması:</span>@Model.AssignmentDescription
+    </p>
+    <p>
+        <span class="text-danger">Görevin Aciliyet Durumu:</span>@Model.AssignmentExigencyDefinition
+    </p>
+</div>
+
+@Html.HiddenFor(i => i.Id)
+@Html.HiddenFor(i => i.AssignmentId)
+
+<div class="form-group">
+    <label asp-for="Definition"></label>
+    <input asp-for="Definition" class="form-control" />
+    <span asp-validation-for="Definition" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Detail"></label>
+    <textarea asp-for="Detail" class="form-control"></textarea>
+    <span asp-validation-for="Detail" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <a asp-action="AssignedWork" class="btn btn-warning btn-sm">Vazgeç</a>
+    <button type="submit" class="btn btn-info btn-sm">
+        <i class="fas fa-check mr-2"></i>Kaydet
+    </button>
+</div>

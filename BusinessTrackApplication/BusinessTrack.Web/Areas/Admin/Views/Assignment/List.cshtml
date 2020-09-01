@@ -1,0 +1,99 @@
+﻿@model AssignmentListViewModel
+@{
+    ViewData["Title"] = "Görev Listesi";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.AssignmemtsViewModel.Count > 0)
+{
+    <a asp-action="Create" class="btn btn-success btn-sm float-right my-3">
+        <i class="fas fa-plus mr-2"></i>
+        Görev Oluştur
+    </a>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Açıklama</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>Aciliyet Tanımı</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assignment in Model.AssignmemtsViewModel)
+            {
+                <tr>
+                    <td>@assignment.Name</td>
+                    <td>@assignment.Description</td>
+                    <td>@assignment.CreatedOn</td>
+                    <td>@assignment.ExigencyDefinition</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@assignment.Id" class="btn btn-warning btn-sm text-center py-1 px-3">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a class="btn btn-danger btn-sm text-center py-1 px-3 text-white" data-assignmentid="@assignment.Id" data-toggle="modal" data-target="#delete-assignment-modal">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="delete-assignment-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="deleteAssignmentLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAssignmentLabel">Uyarı</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Silmek istediğinize emin misiniz?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button id="delete-assignment-btn" type="button" class="btn btn-primary">Tamam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Javascript{
+        <script type="text/javascript">
+            $("#delete-assignment-modal").on("show.bs.modal", function (event) {
+                let deleteButton = $(event.relatedTarget);
+                let assignmentId = deleteButton.data('assignmentid');
+
+                $("#delete-assignment-btn").click(function () {
+                    $.ajax({
+                        type: "GET",
+                        url: "@Url.Action("Delete","Assignment")",
+                        data: { id: assignmentId },
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function () {
+                            window.location.reload();
+                        },
+                        error: function (error) {
+                            alert(error.statusText);
+                        }
+                    });
+                });
+            });
+        </script>
+    }
+}
+else
+{
+    <div class="p-3 text-center mt-3">
+        <p class="lead">
+            Herhangi bir görev bulunamadı.
+        </p>
+        <a asp-action="Create" class="btn btn-info btn-sm">Yeni Görev Oluştur</a>
+    </div>
+}

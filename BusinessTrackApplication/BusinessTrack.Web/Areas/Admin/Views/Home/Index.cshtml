@@ -1,0 +1,111 @@
+﻿@model CardsViewModel
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Atanmayı Bekleyen Görev Sayısı</h5>
+                    <p class="card-text">
+                        @{
+                            if (Model.NumberOfTasksNotAssigned > 0)
+                            {
+                                @Model.NumberOfTasksNotAssigned
+                                <p class="text-right">
+                                    İncelemek için
+                                    <a asp-controller="WorkOrder" asp-action="List">
+                                        <i class="fas fa-chevron-circle-right mr-1"></i>
+                                        Tıklayınız
+                                    </a>
+                                </p>
+                            }
+                            else
+                            {
+                                <span>
+                                    <small>Tüm görevlerinizde personelleriniz çalışmakta ya da herhangi bir göreviniz bulunmamaktadır.</small>
+                                </span>
+                            }
+                        }
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Tamamlanmış Görev Sayısı</h5>
+                        <p class="card-text">
+                            @{
+                                if (Model.NumberOfTasksCompleted > 0)
+                                {
+                                    @Model.NumberOfTasksCompleted
+                                }
+                                else
+                                {
+                                    <span>Herhangi bir görev henüz tamamlanmamıştır.</span>
+                                }
+                            }
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Okunmamış Bildirim Sayısı</h5>
+                        <p class="card-text">
+                            @{
+                                if (Model.UnreadNotifications > 0)
+                                {
+                                    @Model.UnreadNotifications
+                                    <p class="text-right">
+                                        İncelemek için
+                                        <a asp-controller="Notification" asp-action="List">
+                                            <i class="fas fa-chevron-circle-right mr-1"></i>
+                                            Tıklayınız
+                                        </a>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <span>Görülmemiş bildirim bulunamadı.</span>
+                                }
+                            }
+                            </p>
+                        </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body text-dark">
+                        <h5 class="card-title">Toplam Rapor Sayısı</h5>
+                        <p class="card-text">
+                            @{
+                                if (Model.TotalReportCount > 0)
+                                {
+                                    @Model.TotalReportCount
+                                }
+                                else
+                                {
+                                    <span>Yazılmış rapor bulunamadı.</span>
+                                }
+                            }
+                            </p>
+                        </div>
+                </div>
+
+            </div>
+        </div>

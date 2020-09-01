@@ -1,0 +1,94 @@
+﻿@model AppUserWrapperModel
+
+<div class="border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+        <img src="@Model.Picture" alt="@Model.FullName" style="height:4rem!important" class="img-thumbnail float-left" />
+        <div class="float-right">
+            <h6 class="float-left">
+                <a asp-controller="Account" asp-action="Profile">
+                    @Model.FullName
+                </a>
+            </h6>
+            <p class="text-secondary" style="font-size:0.8rem">
+                <small>@Model.Email</small>
+            </p>
+        </div>
+    </div>
+
+    <div class="list-group list-group-flush">
+
+         <a asp-area="@(Model.IsAdmin ? "Admin" : "Member")" asp-action="Index" asp-controller="Home" class="list-group-item list-group-item-action">
+                <i class="fas fa-home mr-2"></i>
+                Anasayfa
+         </a>
+
+        <!-- Member -->
+        @if (!Model.IsAdmin)
+        {
+            <a asp-area="Member"
+               asp-controller="Work"
+               asp-action="AssignedWork" class="list-group-item list-group-item-action">
+                <i class="fas fa-arrow-alt-circle-down mr-2"></i>
+                Gelen İş Emirleri
+            </a>
+            <a asp-area="Member"
+               asp-controller="Task"
+               asp-action="List" class="list-group-item list-group-item-action">
+                <i class="fas fa-arrow-circle-up mr-2"></i>
+                Tamamladığım İşler
+            </a>
+         }
+
+        <!-- Admin -->
+        @if (Model.IsAdmin)
+        {
+            <a asp-controller="Assignment" asp-action="List" class="list-group-item list-group-item-action active">
+                <i class="fas fa-tasks mr-2"></i>
+            </a>
+            <a asp-controller="Exigency" asp-action="List" class="list-group-item list-group-item-action">
+                <i class="fas fa-bullhorn mr-2"></i>
+                Aciliyet İşlemleri
+            </a>
+             <a asp-controller="WorkOrder" asp-action="List" class="list-group-item list-group-item-action">
+                 <i class="fas fa-book-reader mr-2"></i>
+                 İş Emirleri
+             </a>
+            <a asp-controller="Graph" asp-action="Index" class="list-group-item list-group-item-action">
+                <i class="fas fa-chart-line mr-2"></i>
+                Grafikler
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <i class="fas fa-square-root-alt mr-2"></i>
+                İstatistikler
+            </a>
+        }
+
+        <a asp-area="@(Model.IsAdmin ? "Admin" : "Member")" asp-controller="Notification" asp-action="List" class="list-group-item list-group-item-action">
+            <i class="fas fa-bell mr-2"></i>
+            Bildirimler
+            @if (Model.UnreadMessageCount > 0)
+            {
+                <span class="badge badge-pill badge-warning ml-1">@Model.UnreadMessageCount</span>
+            }
+        </a>
+
+        <a asp-action="Profile" asp-controller="Account" class="list-group-item list-group-item-action">
+            <i class="fas fa-user-alt mr-2"></i>
+            Profilim
+        </a>
+
+        @if (Model.IsAdmin)
+        {
+             <a asp-area="Admin" asp-action="List" asp-controller="Log" class="list-group-item list-group-item-action">
+                <i class="fas fa-user-alt mr-2"></i>
+                Log Kayıtları
+            </a>
+        }
+
+        <a asp-area="" asp-controller="Account" asp-action="SignOut" class="list-group-item list-group-item-action">
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            Çıkış Yap
+        </a>
+
+    </div>
+</div>
