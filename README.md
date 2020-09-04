@@ -21,7 +21,7 @@ No design concerns were raised. We set out with the principle of writing clean c
 #### Uploaded Packages (BusinessTrack.Entities)
  * Microsoft.AspNetCore.Identity.EntityFrameworkCore
   
- #### Uploaded Packages (ShopApp.WebUI)
+ #### Uploaded Packages (BusinessTrack.Web)
  * AutoMapper.Extensions.Microsoft.DependencyInjection
  * FluentValidation.AspNetCore
  * Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
