@@ -4,7 +4,7 @@ No design concerns were raised. We set out with the principle of writing clean c
 
 ![homeindex](https://user-images.githubusercontent.com/54249736/92272472-44ae6e80-eef2-11ea-8734-7ebba954a87c.png)
 
-![Screenshot_1](https://user-images.githubusercontent.com/54249736/92272482-4bd57c80-eef2-11ea-8957-9e708f8906f7.png)
+![Screenshot_1](https://user-images.githubusercontent.com/54249736/92272644-98b95300-eef2-11ea-9c7a-db68cbeb26b5.png)
 
 #### Uploaded Packages (BusinessTrack.Business)
  * EPPlus (Excel)
