@@ -30,3 +30,4 @@ No design concerns were raised. We set out with the principle of writing clean c
 #### Contact Addresses
 ##### Linkedin: [Send a message on Linkedin](https://www.linkedin.com/in/cihatsolak/)
 ##### Twitter: [Go to @cihattsolak](https://twitter.com/cihattsolak)
+##### Medium: [Read from medium](https://cihatsolak.medium.com/)
