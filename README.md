@@ -6,22 +6,22 @@ No design concerns were raised. We set out with the principle of writing clean c
 
 ![Screenshot_1](https://user-images.githubusercontent.com/54249736/92272644-98b95300-eef2-11ea-9c7a-db68cbeb26b5.png)
 
-#### Uploaded Packages (BusinessTrack.Business)
+#### Installed Packages (BusinessTrack.Business)
  * EPPlus (Excel)
  * FastMember
  * iTextSharp.LGPLv2.Core
  
-#### Uploaded Packages (BusinessTrack.DataAccess)
+#### Installed Packages (BusinessTrack.DataAccess)
  * Microsoft.AspNetCore.Identity.EntityFrameworkCore
  * Microsoft.EntityFrameworkCore.Design
  * Microsoft.EntityFrameworkCore.SqlServer
  * Microsoft.EntityFrameworkCore.Tools
  * Microsoft.Extensions.Configuration.Abstractions
 
-#### Uploaded Packages (BusinessTrack.Entities)
+#### Installed Packages (BusinessTrack.Entities)
  * Microsoft.AspNetCore.Identity.EntityFrameworkCore
   
- #### Uploaded Packages (BusinessTrack.Web)
+ #### Installed Packages (BusinessTrack.Web)
  * AutoMapper.Extensions.Microsoft.DependencyInjection
  * FluentValidation.AspNetCore
  * Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
