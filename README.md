@@ -1,6 +1,6 @@
 ## Business Track Application (Job Tracking System)
 
-No design concerns were raised. We set out with the principle of writing clean code and aimed to write a system where a company can follow its internal business. The project consists of four layers: Web, Entities, DataAccess and Business. In addition to the asp net core 3.1 version, I also developed additional packages, which are widely used in the industry, by including them in the project. In the information below, there is information about what packages and which layer I use.
+We set out with the principle of writing clean code and aimed to write a system where a company can follow its internal business. The project consists of four layers: Web, Entities, DataAccess and Business. In addition to the asp net core 3.1 version, I also developed additional packages, which are widely used in the industry, by including them in the project. In the information below, there is information about what packages and which layer I use.
 
 ![homeindex](https://user-images.githubusercontent.com/54249736/92272472-44ae6e80-eef2-11ea-8734-7ebba954a87c.png)
 
